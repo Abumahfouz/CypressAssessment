@@ -32,7 +32,7 @@ describe ('Bringyourownlaptop Web Test', () => {
         it ('Check contact us page', ()=>{
             cy.get(':nth-child(1) > .list-reset > :nth-child(1) > .text-white').click()
             cy.get('#name').type('Mahfooz')
-            cy.get('#email').type('randommail@gmail.com', {delay:100}).should('have.value', 'randommail@gmail.com')
+            cy.get('#email').type('randommail@gmail.com').should('have.value', 'randommail@gmail.com')
             cy.get('#message').type('This is my message to you, great job!').should('have.lengthOf.below', 100)
             cy.get('.justify-end > .mr-8').click()
         })
@@ -62,21 +62,21 @@ describe ('JiJi Web Store Test', ()=>{
         it ('Register Functionality', ()=> {
             cy.get(':nth-child(2) > .h-flex-center > div').click()
             cy.get('.h-bold > .fw-button__content').click()
-            cy.get(':nth-child(1) > .fw-field > .fw-field__content > .fw-input').type('mahfooz@wema.com', {delay:100}).should('have.value','mahfooz@wema.com')
-            cy.get(':nth-child(2) > .fw-field > .fw-field__content > .fw-input').type('1234567', {delay:100})
+            cy.get(':nth-child(1) > .fw-field > .fw-field__content > .fw-input').type('mahfooz@wema.com').should('have.value','mahfooz@wema.com')
+            cy.get(':nth-child(2) > .fw-field > .fw-field__content > .fw-input').type('1234567')
             cy.get(':nth-child(3) > .fw-field > .fw-field__content > .fw-input').type('Mahfooz').should('have.length.below', 50)
             cy.get(':nth-child(4) > .fw-field > .fw-field__content > .fw-input').type('Abubakar').should('have.length.below', 50)
-            cy.get('.b-auth-last-form-field > .fw-field > .fw-field__content > .fw-input').type('08034781294', {delay:100})
+            cy.get('.b-auth-last-form-field > .fw-field > .fw-field__content > .fw-input').type('08034781294')
             cy.get('.fw-icon-valid')
             cy.get('.cross').click()
             })
 
         it ('Search a product', ()=>{
-            cy.get('.multiselect__tags').type('Brogues', {delay:100})
+            cy.get('.multiselect__tags').type('Brogues')
             cy.get('.fw-search__search-button > .fw-button__content > .fw-button__slot-wrapper > .fw-search__icon').click()
             cy.get('.b-filter-attribute-range > :nth-child(1) > :nth-child(1)').click()
-            cy.get(':nth-child(1) > input').type('3000', {delay:100})
-            cy.get(':nth-child(3) > input').type('10000', {delay:100})
+            cy.get(':nth-child(1) > input').type('3000')
+            cy.get(':nth-child(3) > input').type('10000')
             cy.get('.h-flex > .fw-button__content > .fw-button__slot-wrapper').click()
         })
 
